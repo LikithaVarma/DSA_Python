@@ -43,3 +43,14 @@ def solve():
        
        
        O(n^2 logn)
+       
+       
+     An algorithm consists of two independent piece of code, having complexities f(n) and g(n) respectively. 
+     What would be the complexity of the complete algorithm?MAX( f(n), g(n) )
+     
+    To measure Time complexity of an algorithm Big O notation is used which: 
+    describes limiting behaviour of the function
+    characterises a function based on growth of function
+    upper bound on growth rate of the function
+    
+    
