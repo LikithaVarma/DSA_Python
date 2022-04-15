@@ -1,0 +1,43 @@
+Problem Description Given an integer A, Print an A X A square matrix filled with elements from 1 to A2 in spiral order.
+ NOTE: Integers in same line are to be separated by single spaces.
+ Problem Constraints 1 <= A <= 1000 Input Format First and only line contains a single integer A.
+ Output Format Print the spiral order pattern in A lines each containing A space-separated integers.
+ Example Input Input 1: 1
+ Input 2: 2
+ Input 3: 3
+ Example Output Output 1: 1
+ Output 2: 1 2
+ 4 3
+ Output 3: 1 2 3
+ 6 5 4
+ 7 8 9
+ Example Explanation Explanation 1: Only 1 is to be arranged.
+ Explanation 2: image
+ Explanation 3: image
+ 
+ def main():
+    # YOUR CODE GOES HERE
+    # Please take input and print output to standard input/output (stdin/stdout)
+    # E.g. 'input()/raw_input()' for input & 'print' for output
+    n=int(input())
+    i=1
+    counter=1
+    while i<=n:
+        if i%2!=0:
+            for k in range(0,n):
+                print(counter,end=" ")
+                counter+=1
+            print(end="\n")
+            counter+=n-1
+        #i+=1
+        if i%2==0:
+            for k in range(0,n):
+                print(counter,end=" ")
+                counter-=1
+            print(end="\n")
+            counter+=n+1
+        i+=1
+    return 0
+
+if __name__ == '__main__':
+    main()
