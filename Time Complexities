@@ -1,0 +1,45 @@
+def solve():
+   for i in range(n):
+        for j in range(i // 2):
+            # O(1) operation
+ O(N*N)
+ 
+ k = 0
+for i in range(n//2, n+1):
+    j = 2
+    while j<=n:
+         k = k + n//2
+         j = j * 2
+         
+ O(nLogn)
+ 
+ What is the time complexity of following code:
+ 
+int a = 0, i = N; 
+while (i > 0) { 
+    a += i; 
+    i /= 2; 
+}
+
+O(log N)
+
+The complexity of Binary search algorithm is O(log n)
+
+If for an algorithm time complexity is given by O(1) then complexityof it is:constant
+
+If for an algorithm time complexity is given by O(log2n) then complexity will: logarithmic
+
+If for an algorithm time complexity is given by O(n) then complexityof it is:: linear
+
+If for an algorithm time complexity is given by O((3/2)^n) then complexity will: exponential
+
+def solve():
+   i = n
+   while i>0:
+       if i%2==0:
+            for j in range(1,n*n+1,2):
+                 #O(1) operation
+       i = i//2
+       
+       
+       O(n^2 logn)
