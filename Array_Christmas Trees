@@ -1,0 +1,50 @@
+Problem Description You are given an array A consisting of heights of Christmas trees and an array B of the same size consisting of the cost of each of the trees (Bi is the cost of tree Ai, where 1 ≤ i ≤ size(A)), and you are supposed to choose 3 trees (let's say, indices p, q, and r), such that Ap < Aq < Ar, where p < q < r.
+ The cost of these trees is Bp + Bq + Br.
+ You are to choose 3 trees such that their total cost is minimum. Return that cost.
+ If it is not possible to choose 3 such trees return -1.
+ Problem Constraints 1 <= A[i], B[i] <= 109 3 <= size(A) = size(B) <= 3000 Input Format
+ First argument is an integer array A.
+ Second argument is an integer array B.
+ Output Format
+ Return an integer denoting the minimum cost of choosing 3 trees whose heights are strictly in increasing order, if not possible, -1.
+ Example Input
+ Input 1:
+ A = [1, 3, 5]
+ B = [1, 2, 3]
+ Input 2:
+ A = [1, 6, 4, 2, 6, 9] B = [2, 5, 7, 3, 2, 7] Example Output
+ Output 1:
+ 6
+ Output 2:
+ 7
+ Example Explanation Explanation 1:
+ We can choose the trees with indices 1, 2 and 3, and the cost is 1 + 2 + 3 = 6.
+ 
+ 
+ class Solution:
+    # @param A : list of integers
+    # @param B : list of integers
+    # @return an integer
+    def solve(self, A, B):
+        #min_list=[]
+        #max_list=[]
+        flag=0
+        minn_sum=[]
+        summ=0
+        for i in range(1,len(A)-1):
+            min_list=[]
+            for j in range(i-1,-1,-1):
+                if A[j]<A[i]:
+                    min_list.append(B[j])
+            max_list=[]
+            for k in range(i+1,len(A)):
+                if A[k]>A[i]:
+                    max_list.append(B[k])
+            if len(min_list)>0 and len(max_list)>0:
+                summ=B[i]+min(min_list)+min(max_list)
+                minn_sum.append(summ)
+                #flag=1
+        if len(minn_sum)>0:
+            return min(minn_sum)
+        else:
+            return -1
