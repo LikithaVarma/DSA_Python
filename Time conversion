@@ -1,0 +1,33 @@
+In the timeConv function, Create a Spanoftime class and initialize it with hours and mins.
+
+1. Make a method addTime which should take two Spanoftime objects and add them. E.g.- (2 hour and 50 min)+(1 hr and 20 min) is (4 hr and 10 min)
+2. Make a method returnMinute which should return total minutes in the Spanoftime objects t1 and t2. E.g.- (1 hr 2 min and 1 hr 2 min) should return 124 minute.
+
+def timeConv(a,b,c,d):
+    # YOUR CODE GOES HERE
+    # The code for taking input and printing output is already taken care of.
+    # Make sure to complete the functions and return the asked requirements.
+    class Spanoftime:
+        def __init__(self,h,m):
+            self.hours=h
+            self.mins=m
+        def displayTime(self):
+            return ("{} hours and {} min".format(self.hours,self.mins))
+        
+        def addTime(t1,t2):
+            t3=Spanoftime(0,0)
+            # Complete the function
+            minutes=(t1.hours+t2.hours)*60+(t1.mins+t2.mins)
+            t3.hours=minutes//60 
+            t3.mins=minutes%60
+            return t3
+        def returnMinutes(t1,t2):
+            # Return the total number of minutes
+            return (t1.hours+t2.hours)*60+(t1.mins+t2.mins)
+        
+    t1=Spanoftime(a,b)
+    t2=Spanoftime(c,d)
+    t3=Spanoftime.addTime(t1,t2)
+    t3.displayTime()
+    totalmin=str(Spanoftime.returnMinutes(t1,t2))
+    return t3.displayTime(),("The total minutes in time t1 and t2 are:  " + totalmin)
